@@ -4,9 +4,6 @@
   .multicode > div {
     display: block !important;
   }
-  .multicode > ul {
-    display: none !important;
-  }
   .multicode > em,
   .multicode > p > em {
     display: block !important;
@@ -15,6 +12,11 @@
   .multicode > p {
     display: block !important;
   }
+
+  .code_toggler {
+    display: none;
+  }
+
   /* wrap code, not scroll */
   pre {
     white-space: pre-wrap;
@@ -25,34 +27,54 @@
   }
   pre code {
     white-space: pre-wrap !important;
+    color: #22252B !important;
   }
-  .content a[title="Source"] {
+  code {
+    white-space: pre-wrap !important;
+    color: #22252B !important;
+  }
+
+  .codehilite .n, .codehilite .na, .codehilite .nb, .codehilite .nc, .codehilite .nd, .codehilite .ne, .codehilite .nf, .codehilite .ni, .codehilite .nl, .codehilite .nn, .codehilite .nt, .codehilite .nv, .codehilite .nx, .codehilite .bp, .codehilite .fm, .codehilite .py {
+    color: #22252B;
+}
+
+
+  article a[title="Source"] {
     float: none;
   }
   /* Drop header, footer, sidebars */
   header,
   footer,
   aside {
-    display: none;
+    display: none !important;
+  }
+  .navbar {
+    display: none !important;
   }
   /* Full-width content body */
-  .content, #main_content_body {
+  article, #main_content_body {
     position: static;
     display: block;
     width: auto;
     height: auto;
+    color:black !important;
     max-width: 100%;
+    overflow: visible !important;
   }
-  #main_content_wrapper {
-    margin-top: 0;
+
+  body {  
+    overflow: visible; 
+    background: #fff;
   }
-  #main_content_body::before {
-    display: none;
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: black;
   }
-  .xrp-ledger-dev-portal.sidebar-primary .main {
-    border: 0;
+
+  .interactive-block {
+    display:none;
   }
-  .sidebar-primary .row {
-    display: block;
+
+  .container {
+    margin-top: 1rem !important;
   }
 }

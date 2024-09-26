@@ -1,0 +1,85 @@
+.top-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  background: url(../img/backgrounds/bg-apex-banner.svg);
+  background-position: center !important;
+  background-size: cover;
+  background-color: $blue-purple-500;
+  color: $white;
+
+  .inner-apex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .apex-banner-text {
+    color: #FFF;
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .apex-btn {
+    margin-left: 16px;
+    color: var(--Gray-100, #000) !important;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    align-items: center;
+    line-height: 100%;
+    letter-spacing: -0.16px;
+    padding: 2px 4px;
+    border-radius: 100px !important;
+    background: #18FF83 !important;
+    text-decoration: none !important;
+    width: 135px;
+    height: 28px;
+  }
+
+  @media (max-width: 1024px) {
+    background: url(../img/backgrounds/bg-apex-banner-md.svg);
+
+    .apex-banner-text {
+      font-size: 18px;
+    }
+
+    .apex-btn {
+      width: 122px;
+      height: 26px;
+      font-size: 14px;
+      letter-spacing: -0.14px;
+    }
+  }
+
+  @media (max-width: 535px) {
+    background: url(../img/backgrounds/bg-apex-banner-sm.svg);
+
+    .apex-btn {
+      margin-left: 0;
+      width: 85px;
+      height: 16px;
+      font-size: 10px;
+      line-height: 100%;
+      letter-spacing: -0.1px;
+    }
+
+    .apex-banner-text {
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    .inner-apex {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}

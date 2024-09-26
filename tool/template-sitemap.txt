@@ -1,4 +1,0 @@
-{% for page in pages -%}
-{%- if page.html is defined and page.html != "sitemap.txt" -%}
-https://xrpl.org/{{page.html}}
-{% endif %}{% endfor %}

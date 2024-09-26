@@ -2,23 +2,30 @@
 //==============================================================================
 // These styles control the display of diagrams in page contents.
 
-.content {
-
+article {
   // Shrink images that would overflow the main column.
   img {
     max-width: 100%;
     height: auto;
-
-    .dactyl_badge {
-      // Exception: badges should be their original (small) size.
-      width: initial;
-    }
   }
 
   // Shrink or grow inlined SVG to fit the main column width.
   svg {
     max-width: 100%;
   }
+
+  .floating-diagram {
+    margin: 0.5rem;
+    float: left;
+  }
+
+  li {
+    clear: left; // avoid spilling to the side with floating diagrams
+  }
+}
+
+
+html:not(.light) article {
 
   // Recolor UMLet diagrams for dark theme -------------------------------------
   svg[fill="black"] {
@@ -232,4 +239,100 @@
     }
   }
 
+}
+
+// Less significant tweaks to color schemes for diagrams in light mode
+// Recolor UMLet diagrams for dark theme -------------------------------------
+html.light {
+  svg[fill="black"] {
+
+    g[fill="blue"] {
+      fill: $blue-700;
+    }
+    g[stroke="blue"] {
+      stroke: $blue-500;
+    }
+    g[fill="rgb(120,120,120)"] {
+      fill: $gray-700;
+    }
+    g[stroke="rgb(120,120,120)"] {
+      stroke: $gray-700;
+    }
+    g[fill="rgb(200,200,200)"] {
+      fill: $gray-400;
+    }
+    g[fill="rgb(70,70,70)"] {
+      fill: $gray-700;
+    }
+    g[stroke="rgb(70,70,70)"] {
+      stroke: $gray-700;
+    }
+    g[fill="rgb(29,180,255)"] { // old Ripple blue.
+      fill: $blue-500;
+    }
+    g[stroke="rgb(29,180,255)"] {
+      stroke: $blue-700;
+    }
+    rect[stroke="rgb(245,247,249)"] { // old off-white.
+      stroke: $gray-050;
+    }
+    g[fill="lime"],
+    g[fill="rgb(0,255,0)"] { // standard green.
+      fill: $green-400; // lighten backgrounds a little
+    }
+    g[stroke="lime"] ,
+    g[stroke="rgb(0,255,0)"]{
+      stroke: $green-700; // darken strokes
+    }
+    g[fill="yellow"],
+    g[fill="rgb(255,255,0)"] {
+      fill: $yellow-300; // lighten up yellow BGs a little
+    }
+    g[fill="red"],
+    g[fill="rgb(255,255,0)"] { // magenta-500 is our closest shade to pure red
+      fill: $magenta-400; // ... but let's lighten it a little as a bg
+    }
+    g[stroke="red"],
+    g[stroke="rgb(255,255,0)"] {
+      stroke: $magenta-500;
+    }
+  }
+
+  // Recolor Figma diagrams for light mode ------------------------------------
+  svg[fill="none"] {
+    rect[fill="#111112"] {
+      fill: $light-bg;
+    }
+    path[fill="white"] {
+      fill: $black;
+    }
+    path[fill="#343437"] {
+      fill: $gray-300;
+    }
+    path[fill="#A2A2A4"],
+    rect[fill="#A2A2A4"],
+    ellipse[fill="#A2A2A4"] {
+      fill: $gray-600;
+    }
+    path[fill="#232325"] {
+      fill: $gray-200;
+    }
+    path[fill="#F5F5F7"] {
+      fill: $gray-900;
+    }
+    path[stroke="#F5F5F7"] {
+      stroke: $gray-900;
+    }
+    path[stroke="#FF198B"] {
+      // slightly darken up this magenta for more contrast in light mode
+      stroke: $magenta-700;
+    }
+
+    linearGradient stop[stop-color="#F5F5F7"] {
+      stop-color: $gray-900;
+    }
+    linearGradient stop[stop-color="#C1C1C2"] {
+      stop-color: $gray-700;
+    }
+  }
 }

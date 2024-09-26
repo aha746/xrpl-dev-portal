@@ -1,53 +1,45 @@
 /* Footer ------------------------------------------------------------------- */
 
-.xrpl-footer {
-  >:first-child {
-    border-top: 1px solid white;
-    padding: 54px 48px 48px 48px;
+[data-component-name="Footer/Footer"] {
+  [data-component-name="Footer/FooterColumn"] {
+    text-shadow: #111112 0px 0px 2px, #111112 1px 1px 2px, #111112 2px 2px 3px,
+    #111112 2px 2px 4px, #111112 2px 2px 5px, #111112 2px 2px 6px, #111112 -1px -1px 2px,
+    #111112 -2px -2px 3px, #111112 -2px -2px 4px;
   }
+  padding: 7.5rem 2rem;
 
-  .absolute_bottom_footer {
-    padding-bottom: 48px;
+  @include media-breakpoint-up(lg) {
+    background-image: url(../img/backgrounds/footer.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
   }
 
   @include media-breakpoint-down(md) {
-    margin: 0 24px;
-  }
-
-  a {
-    text-decoration: none;
+    .col-lg:not(:first-child) {
+      margin-top: 4rem;
+    }
   }
 
   h5 {
     font-size: 1rem;
+    font-weight: 600;
+    color: $gray-400;
   }
 
-  li {
-    font-size: 0.75rem;
+  .nav-link {
+    padding: .75rem 0;
+    line-height: 1;
   }
 
-  .card-body {
-    margin-top: -15px;
-  }
+  .absolute-bottom-footer {
+    font-size: 10px;
+    line-height: 1rem;
 
-  .card-header h5 i {
-    margin-left: 0.2em;
-  }
-
-  .card-grid .card {
-    padding: 24px 48px 48px 48px;
-
-    &:first-child {
-      padding-left: 0;
+    @include media-breakpoint-down(md) {
+      .copyright-license {
+        margin-top: 3rem;
+      }
     }
-
-    @include media-breakpoint-down(lg) {
-      padding-left: 0;
-    }
-  }
-
-  .absolute_bottom_footer span {
-    margin-right: 25px;
-    font-size: 0.75rem;
   }
 }
